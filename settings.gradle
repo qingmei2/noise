@@ -1,1 +1,2 @@
-include ':lib-fft-transform', ':tester', ':sample'
+include ':lib-visualizer'
+include ':lib-visualizer-fft', ':tester', ':sample'
