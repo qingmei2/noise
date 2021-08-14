@@ -3,7 +3,7 @@ package com.paramsen.noise.tester;
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
-import com.paramsen.noise.Noise;
+import com.github.qingmei2.visualizer.fft.Noise;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

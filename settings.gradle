@@ -1,2 +1,4 @@
-include ':lib-visualizer'
-include ':lib-visualizer-fft', ':tester', ':sample'
+include ':lib-visualizer-support-exoplayer'
+include ':lib-visualizer-fft'
+include ':tester'
+include ':sample'

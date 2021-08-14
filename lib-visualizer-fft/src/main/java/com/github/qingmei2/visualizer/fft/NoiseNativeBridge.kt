@@ -1,4 +1,4 @@
-package com.paramsen.noise
+package com.github.qingmei2.visualizer.fft
 
 /**
  * JNI interface

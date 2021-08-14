@@ -15,7 +15,7 @@ typedef struct {
 } NoiseImaginaryConfig;
 
 JNIEXPORT jlong JNICALL
-Java_com_paramsen_noise_NoiseNativeBridge_realConfig(JNIEnv *env, jclass jThis,
+Java_com_github_qingmei2_visualizer_fft_NoiseNativeBridge_realConfig(JNIEnv *env, jclass jThis,
                                                            jint inSize) {
     NoiseRealConfig *cfg = (NoiseRealConfig *) malloc(sizeof(NoiseRealConfig));
     cfg->config = kiss_fftr_alloc(inSize, 0, 0, 0);
@@ -25,7 +25,7 @@ Java_com_paramsen_noise_NoiseNativeBridge_realConfig(JNIEnv *env, jclass jThis,
 }
 
 JNIEXPORT void JNICALL
-Java_com_paramsen_noise_NoiseNativeBridge_realConfigDispose(JNIEnv *env, jclass jThis,
+Java_com_github_qingmei2_visualizer_fft_NoiseNativeBridge_realConfigDispose(JNIEnv *env, jclass jThis,
                                                                   jlong cfgPointer) {
     NoiseRealConfig *cfg = (NoiseRealConfig *) cfgPointer;
 
@@ -35,7 +35,7 @@ Java_com_paramsen_noise_NoiseNativeBridge_realConfigDispose(JNIEnv *env, jclass 
 }
 
 JNIEXPORT void JNICALL
-Java_com_paramsen_noise_NoiseNativeBridge_real(JNIEnv *env, jclass jThis,
+Java_com_github_qingmei2_visualizer_fft_NoiseNativeBridge_real(JNIEnv *env, jclass jThis,
                                                         jfloatArray jInput,
                                                         jfloatArray jOutput, jlong cfgPointer) {
     jsize inSize = (*env)->GetArrayLength(env, jInput);
@@ -64,7 +64,7 @@ Java_com_paramsen_noise_NoiseNativeBridge_real(JNIEnv *env, jclass jThis,
 }
 
 JNIEXPORT jlong JNICALL
-Java_com_paramsen_noise_NoiseNativeBridge_imaginaryConfig(JNIEnv *env, jclass jThis,
+Java_com_github_qingmei2_visualizer_fft_NoiseNativeBridge_imaginaryConfig(JNIEnv *env, jclass jThis,
                                                                 jint inSize) {
     NoiseImaginaryConfig *cfg = (NoiseImaginaryConfig *) malloc(
             sizeof(NoiseImaginaryConfig));
@@ -76,7 +76,7 @@ Java_com_paramsen_noise_NoiseNativeBridge_imaginaryConfig(JNIEnv *env, jclass jT
 }
 
 JNIEXPORT void JNICALL
-Java_com_paramsen_noise_NoiseNativeBridge_imaginaryConfigDispose(JNIEnv *env, jclass jThis,
+Java_com_github_qingmei2_visualizer_fft_NoiseNativeBridge_imaginaryConfigDispose(JNIEnv *env, jclass jThis,
                                                                        jlong cfgPointer) {
     NoiseImaginaryConfig *cfg = (NoiseImaginaryConfig *) cfgPointer;
 
@@ -87,7 +87,7 @@ Java_com_paramsen_noise_NoiseNativeBridge_imaginaryConfigDispose(JNIEnv *env, jc
 }
 
 JNIEXPORT void JNICALL
-Java_com_paramsen_noise_NoiseNativeBridge_imaginary(JNIEnv *env, jclass jThis,
+Java_com_github_qingmei2_visualizer_fft_NoiseNativeBridge_imaginary(JNIEnv *env, jclass jThis,
                                                              jfloatArray jInput,
                                                              jfloatArray jOutput,
                                                              jlong cfgPointer) {

@@ -14,7 +14,7 @@ import android.view.animation.AnimationUtils
 import android.widget.ActionMenuView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.ActionMenuItemView
-import com.paramsen.noise.Noise
+import com.github.qingmei2.visualizer.fft.Noise
 import com.paramsen.noise.sample.R
 import com.paramsen.noise.sample.source.AudioSource
 import io.reactivex.Flowable

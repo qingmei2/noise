@@ -1,4 +1,4 @@
-package com.paramsen.noise
+package com.github.qingmei2.visualizer.fft
 
 import java.io.Closeable
 
@@ -15,7 +15,11 @@ class Noise private constructor(private val configPointer: Long, private val isR
             NoiseNativeBridge.real(src, dst, configPointer)
         } else {
             require(src.size == dst.size) { "Cannot compute FFT, dst length must equal src length" }
-            NoiseNativeBridge.imaginary(src, dst, configPointer)
+            NoiseNativeBridge.imaginary(
+                src,
+                dst,
+                configPointer
+            )
         }
 
         return dst
@@ -25,7 +29,9 @@ class Noise private constructor(private val configPointer: Long, private val isR
         if (isReal) {
             NoiseNativeBridge.realConfigDispose(configPointer)
         } else {
-            NoiseNativeBridge.imaginaryConfigDispose(configPointer)
+            NoiseNativeBridge.imaginaryConfigDispose(
+                configPointer
+            )
         }
     }
 
@@ -33,13 +39,21 @@ class Noise private constructor(private val configPointer: Long, private val isR
         /** @param inputLength fixed input length to compute FFT for */
         @JvmStatic
         fun real(inputLength: Int): Noise {
-            return Noise(NoiseNativeBridge.realConfig(inputLength), true)
+            return Noise(
+                NoiseNativeBridge.realConfig(
+                    inputLength
+                ), true
+            )
         }
 
         /** @param inputLength fixed input length to compute FFT for */
         @JvmStatic
         fun imaginary(inputLength: Int): Noise {
-            return Noise(NoiseNativeBridge.imaginaryConfig(inputLength), false)
+            return Noise(
+                NoiseNativeBridge.imaginaryConfig(
+                    inputLength
+                ), false
+            )
         }
     }
 }
